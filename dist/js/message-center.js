@@ -1,24 +1,6 @@
-(function(module) {
-try {
-  module = angular.module('message-center.templates');
-} catch (e) {
-  module = angular.module('message-center.templates', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('templates/message-center/message-center.html',
-    '<span class="message-center" ng-class="position">\n' +
-    '  <ul class="messages">\n' +
-    '    <message-item ng-repeat="message in messages" class="message-animation"></message-item>\n' +
-    '  </ul>\n' +
-    '</span>\n' +
-    '');
-}]);
-})();
-
 angular.module('message-center.service', []);
 
 angular.module('message-center', [
-  'ngAnimate',
   'message-center.service',
   'message-center.templates'
 ])
@@ -114,6 +96,23 @@ angular.module('message-center', [
     templateUrl: 'templates/message-center/message-item.html'
   };
 });
+
+(function(module) {
+try {
+  module = angular.module('message-center.templates');
+} catch (e) {
+  module = angular.module('message-center.templates', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('templates/message-center/message-center.html',
+    '<span class="message-center" ng-class="position">\n' +
+    '  <ul class="messages">\n' +
+    '    <message-item ng-repeat="message in messages" class="message-animation"></message-item>\n' +
+    '  </ul>\n' +
+    '</span>\n' +
+    '');
+}]);
+})();
 
 angular.module('message-center.service')
 

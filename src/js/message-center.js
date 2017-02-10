@@ -1,7 +1,6 @@
 angular.module('message-center.service', []);
 
 angular.module('message-center', [
-  'ngAnimate',
   'message-center.service',
   'message-center.templates'
 ])
